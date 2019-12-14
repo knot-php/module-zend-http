@@ -13,7 +13,6 @@ use KnotLib\Kernel\Module\ComponentModule;
 use KnotLib\Kernel\Module\Components;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Support\Adapter\PsrRequestAdapter;
 
 class ZendRequestModule extends ComponentModule
 {
@@ -26,7 +25,6 @@ class ZendRequestModule extends ComponentModule
     {
         return [
             Components::EVENTSTREAM,
-            Components::DI,
         ];
     }
 
@@ -51,7 +49,7 @@ class ZendRequestModule extends ComponentModule
     {
         try{
             $request = ServerRequestFactory::fromGlobals();
-            $app->request(new PsrRequestAdapter($request));
+            $app->request($request);
 
             // fire event
             $app->eventstream()->channel(Channels::SYSTEM)->push(Events::REQUEST_ATTACHED, $app->request());

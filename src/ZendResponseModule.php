@@ -13,7 +13,6 @@ use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
 use KnotLib\Kernel\Module\ComponentModule;
 use KnotLib\Kernel\Module\Components;
-use KnotLib\Support\Adapter\PsrResponseAdapter;
 
 class ZendResponseModule extends ComponentModule
 {
@@ -26,7 +25,6 @@ class ZendResponseModule extends ComponentModule
     {
         return [
             Components::EVENTSTREAM,
-            Components::DI,
         ];
     }
 
@@ -50,8 +48,7 @@ class ZendResponseModule extends ComponentModule
     public function install(ApplicationInterface $app)
     {
         try{
-            $response = new PsrResponseAdapter(new Response);
-            $app->response($response);
+            $app->response(new Response);
 
             // fire event
             $app->eventstream()->channel(Channels::SYSTEM)->push(Events::RESPONSE_ATTACHED, $app->response());
