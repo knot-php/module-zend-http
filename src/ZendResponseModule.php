@@ -11,20 +11,30 @@ use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Module\ComponentModule;
-use KnotLib\Kernel\Module\Components;
+use KnotLib\Kernel\Module\ModuleInterface;
+use KnotLib\Kernel\Module\ComponentTypes;
 
-class ZendResponseModule extends ComponentModule
+class ZendResponseModule implements ModuleInterface
 {
+    /**
+     * Declare dependency on another modules
+     *
+     * @return array
+     */
+    public static function requiredModules() : array
+    {
+        return [];
+    }
+
     /**
      * Declare dependent on components
      *
      * @return array
      */
-    public static function requiredComponents() : array
+    public static function requiredComponentTypes() : array
     {
         return [
-            Components::EVENTSTREAM,
+            ComponentTypes::EVENTSTREAM,
         ];
     }
 
@@ -35,7 +45,7 @@ class ZendResponseModule extends ComponentModule
      */
     public static function declareComponentType() : string
     {
-        return Components::RESPONSE;
+        return ComponentTypes::RESPONSE;
     }
 
     /**
