@@ -12,13 +12,13 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.2",
     "zendframework/zend-diactoros": "^1.0",
-    "knot-lib/kernel": "~0.1",
-    "knot-lib/module": "~0.1",
-    "knot-lib/support": "~0.1",
-    "knot-php/module-knot-pipeline": "~0.1",
-    "knot-php/module-stk2k-eventstream": "~0.1"
+    "knot-lib/kernel": "~0.8",
+    "knot-lib/module": "~0.7",
+    "knot-lib/support": "~0.4",
+    "knot-php/module-knot-pipeline": "~0.3",
+    "knot-php/module-stk2k-eventstream": "~0.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.3.0",
@@ -26,13 +26,12 @@
   },
   "autoload": {
     "psr-4": {
-      "KnotPhp\\Module\\ZendHttp\\": "src/"
+      "knotphp\\module\\zendhttp\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "KnotPhp\\Module\\ZendHttp\\Test\\": "test/include/",
-      "KnotPhp\\Module\\ZendHttp\\Demo\\": "demo/include/"
+      "knotphp\\module\\zendhttp\\test\\": "test/"
     }
   }
 }

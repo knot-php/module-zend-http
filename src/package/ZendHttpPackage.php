@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\ZendHttp\Package;
+namespace knotphp\module\zendhttp\package;
 
-use KnotLib\Kernel\Module\PackageInterface;
-use KnotPhp\Module\KnotPipeline\KnotPipelineModule;
-use KnotPhp\Module\Stk2kEventStream\Stk2kEventStreamModule;
-use KnotPhp\Module\ZendHttp\ZendRequestModule;
-use KnotPhp\Module\ZendHttp\ZendResponseModule;
+use knotlib\kernel\module\PackageInterface;
+use knotphp\module\knotpipeline\KnotPipelineModule;
+use knotphp\module\stk2keventstream\Stk2kEventStreamModule;
+use knotphp\module\zendhttp\ZendRequestModule;
+use knotphp\module\zendhttp\ZendResponseModule;
 
 class ZendHttpPackage implements PackageInterface
 {

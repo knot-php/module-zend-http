@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\ZendHttp;
+namespace knotphp\module\zendhttp;
 
 use Throwable;
 
 use Zend\Diactoros\Response;
 
-use KnotLib\Kernel\Exception\ModuleInstallationException;
-use KnotLib\Kernel\Kernel\ApplicationInterface;
-use KnotLib\Kernel\EventStream\Channels;
-use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Module\ModuleInterface;
-use KnotLib\Kernel\Module\ComponentTypes;
+use knotlib\kernel\exception\ModuleInstallationException;
+use knotlib\kernel\kernel\ApplicationInterface;
+use knotlib\kernel\eventstream\Channels;
+use knotlib\kernel\eventstream\Events;
+use knotlib\kernel\module\ModuleInterface;
+use knotlib\kernel\module\ComponentTypes;
 
 class ZendResponseModule implements ModuleInterface
 {
